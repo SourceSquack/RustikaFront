@@ -1,30 +1,153 @@
+import { useEffect, useState } from "react";
 import Head from "./head";
-import { useRef } from "react";
+import Navbar from "@/components/Navbar";
 
-export default function Home() {
-  const mainRef = useRef(null);
+export default function HomePage() {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
   return (
     <div>
       <Head />
-      <div className="relative h-screen w-screen bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
+      <div className="relative h-screen w-screen bg-[url('/images/isa.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
-        <nav className="px-12 py-5">
-          <img src="/images/logorustika.png" alt="logo" className="w-32" />
+        <nav className="fixed top-0 left-0 w-full bg-transparent bg-opacity-70 h-16 z-10 transition-opacity duration-500 ease-in-out">
+            <Navbar />
+          <div>
+          </div>
         </nav>
-        <div ref={mainRef} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <h1 className="text-5xl text-white font-bold text-center">Rustika Restaurant</h1>
-          <p className="text-2xl text-white text-center">El mejor restaurante de filandia, Quindio</p>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <h1 className="text-5xl text-amber-600 font-bold text-center">
+            Rustika Restaurant
+          </h1>
+          <p className="text-2xl font-bold text-amber-600 text-center">
+            Parrilla, Café, Bar{" "}
+          </p>
+          <p className="text-sm font-extrabold text-amber-600 text-center">
+            Filandia, Quindio
+          </p>
           <div className="flex justify-center mt-10 gap-5">
-            <button className="bg-white text-black px-10 py-3 rounded-full text-lg font-medium">
+            <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
               Reservar
             </button>
-            <button className="bg-olive text-black px-10 py-3 rounded-full text-lg font-medium">
+            <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
               Ver Menú
-              </button>
+            </button>
           </div>
+        </div>
+      </div>
+      <div className="">
+        <div className="container mx-auto mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-bonds rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/images/logorustika.png"
+                alt="food"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
+                  Deliciosos cortes de carne
+                </h2>
+                <p className="text-gray-700 text-base">
+                  Nuestros cortes de carne son preparados por expertos y te
+                  harán agua la boca. ¡No te los pierdas!
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/images/logorustika.png"
+                alt="food"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
+                  Deliciosos cortes de carne
+                </h2>
+                <p className="text-gray-700 text-base">
+                  Nuestros cortes de carne son preparados por expertos y te
+                  harán agua la boca. ¡No te los pierdas!
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/images/logorustika.png"
+                alt="food"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
+                  Deliciosos cortes de carne
+                </h2>
+                <p className="text-gray-700 text-base">
+                  Nuestros cortes de carne son preparados por expertos y te
+                  harán agua la boca. ¡No te los pierdas!
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/images/logorustika.png"
+                alt="food"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
+                  Deliciosos cortes de carne
+                </h2>
+                <p className="text-gray-700 text-base">
+                  Nuestros cortes de carne son preparados por expertos y te
+                  harán agua la boca. ¡No te los pierdas!
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/images/logorustika.png"
+                alt="food"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
+                  Deliciosos cortes de carne
+                </h2>
+                <p className="text-gray-700 text-base">
+                  Nuestros cortes de carne son preparados por expertos y te
+                  harán agua la boca. ¡No te los pierdas!
+                </p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src="/images/logorustika.png"
+                alt="food"
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
+                  Deliciosos cortes de carne
+                </h2>
+                <p className="text-gray-700 text-base">
+                  Nuestros cortes de carne son preparados por expertos y te
+                  harán agua la boca. ¡No te los pierdas!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
   );
 }
