@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Head from "./head";
 import Navbar from "@/components/Navbar";
+import MenuItem from "@/components/MenuItem";
 
 export default function HomePage() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -22,9 +23,8 @@ export default function HomePage() {
       <div className="relative h-screen w-screen bg-[url('/images/isa.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
         <nav className="fixed top-0 left-0 w-full bg-transparent bg-opacity-70 h-16 z-10 transition-opacity duration-500 ease-in-out">
-            <Navbar />
-          <div>
-          </div>
+          <Navbar />
+          <div></div>
         </nav>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <h1 className="text-5xl text-amber-600 font-bold text-center">
@@ -40,9 +40,11 @@ export default function HomePage() {
             <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
               Reservar
             </button>
-            <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
-              Ver Menú
-            </button>
+            <div className="flex justify-center mt-10 gap-5">
+              <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
+                <MenuItem title="Menú" address="/menu" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
