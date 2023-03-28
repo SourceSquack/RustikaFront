@@ -21,7 +21,7 @@ setShowMobileMenu( current => !current);
   />
   <div className="flex-row ml-20 gap-7 hidden lg:flex">
       <NavbarItem label="Home"/>
-      <NavbarItem label="Menu"/>
+      <NavbarItem label="Menú"/>
       <NavbarItem label="Bar"/>
       <NavbarItem label="Contact"/>
   </div>
