@@ -37,9 +37,11 @@ export default function HomePage() {
             Filandia, Quindio
           </p>
           <div className="flex justify-center mt-10 gap-5">
-            <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
-              Reservar
-            </button>
+            <div className="flex justify-center mt-10 gap-5">
+              <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
+                <MenuItem title="Reservar" address="/reservar" />
+              </button>
+            </div>
             <div className="flex justify-center mt-10 gap-5">
               <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
                 <MenuItem title="Menú" address="/menu" />
