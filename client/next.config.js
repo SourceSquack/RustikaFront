@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "www.eleconomista.com.mx",
+      "media-cdn.tripadvisor.com",
       "editorialtelevisa.brightspotcdn.com",
       "1.bp.blogspot.com",
       "www.mexicoenmicocina.com",

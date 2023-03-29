@@ -8,8 +8,8 @@ export default function Card({ result }) {
             <Link href={`/menu/${result.id}`}>
                 <Image src={result.imageUrl} width={500} height={300} className='sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200' style={{ maxWidth: "100%", height: "auto", }} placeholder='blur' blurDataURL='/spinner.svg' alt='image is not available'></Image>
                 <div className='p-2'>
-                    <p className='line-clamp-2 text-md'>{result.description}</p>
                     <h2 className='truncate text-lg font-bold'>{result.name}</h2>
+                    <p className='line-clamp-2 text-md'>{result.description}</p>
                     <p className='flex items-center'>$ {result.value}</p>
                 </div>
             </Link>
