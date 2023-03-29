@@ -18,7 +18,7 @@ html {
   @apply h-full;
 }
 
-img {
+image {
   max-width: 100%;
   display: block;
 }

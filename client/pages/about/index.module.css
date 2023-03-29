@@ -1,4 +1,27 @@
-.baner {
+.banner {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.bannerA {
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+}
+
+.bannerB {
+    height: 120%;
+    width: max-content;
+}
+
+
+
+/* .baner {
     background-color: wheat;
     height: 20vh
 }
@@ -28,7 +51,11 @@
 
 .aboutImg {
     background-color: yellowgreen;
-}
+} */
+
+
+
+/* html css module */
 
 /* <div><div className= {
     s.baner
