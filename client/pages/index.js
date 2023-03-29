@@ -38,7 +38,7 @@ export default function HomePage() {
           </p>
           <div className="flex justify-center mt-10 gap-5">
             <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
-              Reservar
+              <MenuItem title="Reservar" address="/reservar" />
             </button>
             <div className="flex justify-center mt-10 gap-5">
               <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">

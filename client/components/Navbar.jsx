@@ -20,10 +20,10 @@ setShowMobileMenu( current => !current);
     alt="Rustika"
   />
   <div className="flex-row ml-20 gap-7 hidden lg:flex">
-      <NavbarItem label="Home"/>
-      <NavbarItem label="Menu"/>
-      <NavbarItem label="Bar"/>
-      <NavbarItem label="Contact"/>
+      <NavbarItem label="Home" address="/"/>
+      <NavbarItem label="Menú" address="/menu"/>
+      <NavbarItem label="Bar" address="/bar"/>
+      <NavbarItem label="Contact" address="/contact"/>
   </div>
   <div
   onClick={toggleMobileMenu}

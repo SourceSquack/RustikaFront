@@ -4,8 +4,8 @@ export default function HeadComponent() {
   return (
     <Head>
       <title>Rustika Restaurant</title>
-      <meta name="El mejor restaurante de filandia, Quindio" content= "parrilla, restaurante, cafe, bar"/>
-      <meta name="the best restaurant in filandia, Quindio" content="grill, restaurant, cafe, bar" />
+      <meta name="El mejor restaurante de filandia, quindio" content= "parrilla, restaurante, cafe, bar"/>
+      <meta name="the best restaurant in filandia, quindio" content="grill, restaurant, cafe, bar" />
         <link rel="icon" href="images/favicon.png" />
     </Head>
   );
