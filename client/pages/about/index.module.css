@@ -1,0 +1,57 @@
+.baner {
+    background-color: wheat;
+    height: 20vh
+}
+
+.contaimer_about {
+    padding: 0 10rem 0 10rem;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+}
+
+.aboutBanerLat {
+    background-color: blueviolet;
+}
+
+.aboutTexImg {
+    display: grid;
+    grid-template-rows: 5fr 3fr;
+    gap: 1rem;
+}
+
+.aboutText {
+    background-color: brown;
+}
+
+.aboutImg {
+    background-color: yellowgreen;
+}
+
+/* <div><div className= {
+    s.baner
+}
+
+>imagen </div><div className= {
+    s.contaimer_about
+}
+
+><div className= {
+    s.aboutTexImg
+}
+
+><div className= {
+    s.aboutText
+}
+
+>descripcion </div><div className= {
+    s.aboutImg
+}
+
+>imagen corta </div></div><div className= {
+    s.aboutBanerLat
+}
+
+>imagen Larga Baner </div></div></div> */
