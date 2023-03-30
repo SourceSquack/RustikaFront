@@ -1,13 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
-const Navbar = ({label, active}) => {
+const Navbar = ({label, active, address}) => {
 
     
 
     return(
-        <div className={active ? 'text-white cursor-default': 'text-gray-200 hover:text-gray-300 cursor-pointer transition'}>
+        <Link href={address} className={active ? 'text-white cursor-default': 'text-gray-200 hover:text-gray-300 cursor-pointer transition'}>
             {label}
-        </div>
+        </Link>
     )
 };
 

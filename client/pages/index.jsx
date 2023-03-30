@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "./head";
 import Navbar from "@/components/Navbar";
 import MenuItem from "@/components/MenuItem";
+import Footer from "@/components/Footer";
 
 export default function HomePage() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -37,11 +38,13 @@ export default function HomePage() {
             Filandia, Quindio
           </p>
           <div className="flex justify-center mt-10 gap-5">
-            <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
+            <div className="flex justify-center mt-10">
+            <button className="bg-olive text-white text-center px-8 py-3 rounded-full text-lg font-medium">
               <MenuItem title="Reservar" address="/reservar" />
             </button>
-            <div className="flex justify-center mt-10 gap-5">
-              <button className="bg-olive text-white px-10 py-3 rounded-full text-lg font-medium">
+            </div>
+            <div className="flex justify-center mt-10">
+              <button className="bg-olive text-white px-12 py-3 text-center rounded-full text-lg font-medium">
                 <MenuItem title="Menú" address="/menu" />
               </button>
             </div>
@@ -150,6 +153,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
