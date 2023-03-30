@@ -21,7 +21,7 @@ const Navbar = () => {
         setShowBackground(false);
       }
     }
-  
+
 
     window.addEventListener("scroll", handleScroll);
 
@@ -34,28 +34,28 @@ const Navbar = () => {
     setShowMobileMenu((current) => !current);
   }, []);
 
- 
+
 
   return (
     <nav className="w-full fixed z-40">
       <div
-        className={`px-4 md:px-16 py-1 flex flex-row items-center transition duration-500 ${
-          showBackground ? "bg-zinc-900 bg-opacity-90" : ""
-        }`}
-        >
+        className={`px-4 md:px-16 py-1 flex flex-row items-center transition duration-500 ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""
+          }`}
+      >
         <div>
-        <Image
-          src="/images/logorustika.png"
-          width={110}
-          height={110}
-          alt="Logo"
-        />
-      </div>
+          <Image
+            src="/images/logorustika.png"
+            width={110}
+            height={110}
+            alt="Logo"
+          />
+        </div>
         <div className="ml-19 mx-14 gap-6 hidden md:flex text-lg">
           <NavbarItem label="Home" address="/" />
-          <NavbarItem label="Menú" address="/menu"/>
+          <NavbarItem label="Menú" address="/menu" />
           <NavbarItem label="Bar" address="/bar" />
           <NavbarItem label="Contact" address="/contact" />
+          <NavbarItem label="Nosotros" address="/about" />
         </div>
         <div
           onClick={toggleMobileMenu}
@@ -63,9 +63,8 @@ const Navbar = () => {
         >
           <p className="text-white text-base">Buscar</p>
           <ChevronDownIcon
-            className={`w-4 text-white fill-white transition ${
-              showMobileMenu ? "rotate-180" : "rotate-0"
-            }`}
+            className={`w-4 text-white fill-white transition ${showMobileMenu ? "rotate-180" : "rotate-0"
+              }`}
           />
           <MobileMenu visible={showMobileMenu} />
         </div>
