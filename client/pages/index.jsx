@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import MenuItem from "@/components/MenuItem";
 import Footer from "@/components/Footer";
 
+
 export default function HomePage() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
