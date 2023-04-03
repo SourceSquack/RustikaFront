@@ -1,5 +1,5 @@
 import { LockClosedIcon } from '@heroicons/react/24/solid';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 // import { useAuth } from '@hooks/useAuth';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
