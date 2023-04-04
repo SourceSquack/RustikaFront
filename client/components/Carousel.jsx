@@ -4,11 +4,11 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 export default function Carousel({ results, title }) {
     const scrollLeft = () => {
-        document.getElementById('content').scrollLeft -= 400;
+        document.getElementById(title).scrollLeft -= 400;
     }
 
     const scrollRight = () => {
-        document.getElementById('content').scrollLeft += 400;
+        document.getElementById(title).scrollLeft += 400;
     }
     return (
         <div className='relative'>
@@ -17,7 +17,7 @@ export default function Carousel({ results, title }) {
                 <button className='p-2 m-2 rounded-full bg-white' onClick={scrollLeft}><FiChevronLeft /></button>
                 <button className='p-2 m-2 rounded-full bg-white' onClick={scrollRight}><FiChevronRight /></button>
             </div>
-            <div id='content' className='carpusel p-4 flex items-center justify-start overflow-x-auto scroll-smooth'>
+            <div id={title} className='carpusel p-4 flex items-center justify-start overflow-x-auto scroll-smooth'>
                 {results.map((result) => (
                     <div>
                         <Card key={result.id} result={result} />
