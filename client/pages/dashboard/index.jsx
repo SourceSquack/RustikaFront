@@ -104,7 +104,7 @@ export default function LoginPage() {
               <div>
                 <button
                   type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-olive hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-olive hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
                 >
                   <span className="absolute left-0 inset-y-0 flex items-center pl-3">
                     <LockClosedIcon className="h-5 w-5 text-amber-500 group-hover:text-amber-600" aria-hidden="true" />

@@ -25,7 +25,7 @@ const Paginator = ({ totalItems, itemsPerPage, neighbours, setOffset }) => {
   }
 
   function getClassActive(i) {
-    return i === current ? 'z-10 bg-indigo-50 border-indigo-500 text-indigo-600' : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50';
+    return i === current ? 'z-10 bg-amber-50 border-amber-500 text-amber-600' : 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50';
   }
 
   function prevPage() {

@@ -42,13 +42,13 @@ export default function FormProduct({setOpen, setAlert}) {
               <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                 Nombre
               </label>
-              <input type="text" name="title" id="title" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <input type="text" name="title" id="title" className="mt-1 focus:ring-amber-500 focus:border-amber-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
             </div>
             <div className="col-span-6 sm:col-span-3">
               <label htmlFor="price" className="block text-sm font-medium text-gray-700">
                 Precio
               </label>
-              <input type="number" name="price" id="price" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <input type="number" name="price" id="price" className="mt-1 focus:ring-amber-500 focus:border-amber-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
             </div>
             <div className="col-span-6">
               <label htmlFor="category" className="block text-sm font-medium text-gray-700">
@@ -58,7 +58,7 @@ export default function FormProduct({setOpen, setAlert}) {
                 id="category"
                 name="category"
                 autoComplete="category-name"
-                className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm"
               >
                 <option value="1">Licor</option>
                 <option value="2">Entrada</option>
@@ -77,7 +77,7 @@ export default function FormProduct({setOpen, setAlert}) {
                 id="description"
                 autoComplete="description"
                 rows="3"
-                className="form-textarea block w-full mt-1 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm sm:text-sm border-gray-300 rounded-md"
+                className="form-textarea block w-full mt-1 focus:ring-amber-500 focus:border-amber-500 shadow-sm sm:text-sm border-gray-300 rounded-md"
               />
             </div>
             <div className="col-span-6">
@@ -96,7 +96,7 @@ export default function FormProduct({setOpen, setAlert}) {
                     <div className="flex text-sm text-gray-600">
                       <label
                         htmlFor="images"
-                        className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                        className="relative cursor-pointer bg-white rounded-md font-medium text-amber-600 hover:text-amber-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-amber-500"
                       >
                         <span>Sube un archivo</span>
                         <input id="images" name="images" type="file" className="sr-only" />
@@ -113,7 +113,7 @@ export default function FormProduct({setOpen, setAlert}) {
         <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
           <button
             type="submit"
-            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
           >
             Crear
           </button>

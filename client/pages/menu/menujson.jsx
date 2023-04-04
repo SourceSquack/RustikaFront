@@ -4,7 +4,7 @@ const menujson = [{
     value: 7000,
     description: "Rociado con miel acompañada con queso cuajada",
     category: "Entrada",
-    descuento: false,
+    descuento: true,
     porcentaje: 0,
     newValue: 0,
     imageUrl: "https://picsum.photos/200/300"
