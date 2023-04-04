@@ -8,13 +8,12 @@ export default function search() {
     const params = useSearchParams();
     const search = params.get("searchTerm");
     const menuSearch = menujson.filter(menu => menu.name.toLowerCase().includes(search.toLowerCase()));
+    console.log(menuSearch)
     return (
         <div>
             <SearchBox />
-            {menuSearch && menuSearch.length === 0 && (
-                <h1 className='text-center pt-6'>No results found</h1>
-            )}
-            {menuSearch && <Results results={menuSearch} />}
+            {menuSearch.length > 0 ? <Results results={menuSearch} /> :
+                <h1 className='text-center py-6 text-4xl font-bold'>No results found</h1>}
         </div>
     )
 }

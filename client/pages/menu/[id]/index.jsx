@@ -15,18 +15,18 @@ export default function menuIdPage() {
                 <Image src={menuId.imageUrl} width={500} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen del menu'></Image>
                 <div className='p-2'>
                     <h2 className='text-lg mb-3 font-bold'>{menuId.name}</h2>
-                    <p className='text-lg mb-3'>
+                    {menuId.description ? <p className='text-lg mb-3'>
                         <span className='font-semibold mr-1'>Description:</span>
                         {menuId.description}
-                    </p>
-                    <p className='mb-3'>
-                        <span className='font-semibold mr-1'>$</span>{menuId.value}
-                    </p>
+                    </p> : null}
                     <p className='mb-3'>
                         <span className='font-semibold mr-1'>Categoria:</span>{menuId.category}
                     </p>
+                    {menuId.subCategory ? <p className='mb-3'>
+                        <span className='font-semibold mr-1'>Subcategoria:</span>{menuId.subCategory}
+                    </p> : null}
                     <p className='mb-3'>
-                        <span className='font-semibold mr-1'>Subcategoria:</span>{menuId.subcategory}
+                        <span className='font-semibold mr-1'>$</span>{menuId.value}
                     </p>
                 </div>
             </div>
