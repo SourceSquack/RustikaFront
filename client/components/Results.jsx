@@ -1,6 +1,6 @@
 import React from 'react'
 import Carousel from './Carousel'
-import CarouselDrinks from './CarouselDrinks'
+import FilterSubCategories from './FilterSubCategories';
 
 
 export default function Results({ results }) {
@@ -22,10 +22,10 @@ export default function Results({ results }) {
         {menuEnsaladas.length > 0 ? <Carousel results={menuEnsaladas} title={"Ensaladas"} /> : null}
         {menuPostres.length > 0 ? <Carousel results={menuPostres} title={"Postres"} /> : null}
         <div className='text-center py-6 text-4xl font-bold'>BEBIDAS</div>
-        {bebidasCalientes.length > 0 ? <CarouselDrinks results={bebidasCalientes} title={"Bebidas Calientes"} /> : null}
-        {bebidasFrias.length > 0 ? <CarouselDrinks results={bebidasFrias} title={"Bebidas Frias"} /> : null}
-        {bebidasCocteleria.length > 0 ? <CarouselDrinks results={bebidasCocteleria} title={"Cocteleria"} /> : null}
-        {bebidasShots.length > 0 ? <CarouselDrinks results={bebidasShots} title={"Shots"} /> : null}
-        {bebidasLicores.length > 0 ? <CarouselDrinks results={bebidasLicores} title={"Licores"} /> : null}
+        {bebidasCalientes.length > 0 ? <FilterSubCategories results={bebidasCalientes} title={"Bebidas Calientes"} /> : null}
+        {bebidasFrias.length > 0 ? <FilterSubCategories results={bebidasFrias} title={"Bebidas Frias"} /> : null}
+        {bebidasCocteleria.length > 0 ? <FilterSubCategories results={bebidasCocteleria} title={"Cocteleria"} /> : null}
+        {bebidasShots.length > 0 ? <FilterSubCategories results={bebidasShots} title={"Shots"} /> : null}
+        {bebidasLicores.length > 0 ? <FilterSubCategories results={bebidasLicores} title={"Licores"} /> : null}
     </>)
 }

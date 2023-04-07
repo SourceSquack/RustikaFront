@@ -11,8 +11,12 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
+<<<<<<< HEAD
     "emailjs": "^4.0.1",
     "emailjs-com": "^3.2.0",
+=======
+    "@tailwindcss/line-clamp": "^0.4.4",
+>>>>>>> 65c0ea9d8e2ed0a4067a295cfee05d0549839562
     "flowbite": "^1.6.4",
     "flowbite-datepicker": "^1.2.2",
     "flowbite-react": "^0.4.2",
@@ -20,7 +24,12 @@
     "react": "18.2.0",
     "react-datetime": "^3.2.0",
     "react-dom": "18.2.0",
+<<<<<<< HEAD
     "react-google-recaptcha": "^2.1.0"
+=======
+    "react-icons": "^4.8.0",
+    "tailwind-scrollbar-hide": "^1.1.7"
+>>>>>>> 65c0ea9d8e2ed0a4067a295cfee05d0549839562
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

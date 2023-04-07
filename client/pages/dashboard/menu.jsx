@@ -2,16 +2,19 @@ import { Fragment, useState } from 'react'
 import {
   CheckIcon,
   ChevronDownIcon,
+  CurrencyDollarIcon,
+  NoSymbolIcon,
 } from '@heroicons/react/20/solid'
 import Paginator from "@/components/Paginator";
 // import useFetch from "@hooks/useFetch";
 // import endPoints from "@services/api";
 import { Menu, Transition } from '@headlessui/react'
 import Modal from '@/components/Modal';
-import FormProduct from '@/components/FormProducts';
+import FormProduct from '@/components_dash/FormProducts';
 import useAlert from '@/hooks/useAlert';
 import Alert from '@/Components/Alert';
 import MenuJSON from '@/pages/menu/menujson';
+import Nav from '@/components_dash/Nav';
 
 const PRODUCT_LIMIT = 5;
 
@@ -27,6 +30,7 @@ const totalProducts = MenuJSON.length;
 
   return (
     <>
+    <Nav />
     <Alert alert={alert} handleClose={toggleAlert} />
     <div className="lg:flex lg:items-center lg:justify-between py-12 px-4 sm:px-10 lg:px-12">
       <div className="min-w-0 flex-1">
@@ -39,7 +43,7 @@ const totalProducts = MenuJSON.length;
           <button
             onClick={()=>setOpen(true)}
             type="button"
-            className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            className="inline-flex items-center rounded-md bg-olive px-3 py-2 text-sm font-semibold text-white hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
             <CheckIcon className="-ml-0.5 mr-1.5 h-5 w-5" aria-hidden="true" />
             Crear
@@ -103,7 +107,7 @@ const totalProducts = MenuJSON.length;
                       Precio
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Id
+                      Descuento
                     </th>
                     <th scope="col" className="relative px-6 py-3">
                       <span className="sr-only">Edit</span>
@@ -126,16 +130,16 @@ const totalProducts = MenuJSON.length;
                           </div>
                         </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      <td className="px-6 py-4 whitespace-nowrap max-w-sm">
                         <div className="text-sm text-gray-900">{product?.category}</div>
-                        <div className="text-sm text-gray-500">{product?.descuento?'Descuento':'Sin descuento'}</div>
+                        <div className="text-sm text-gray-500 overflow-hidden overflow-ellipsis">{product?.description}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">{product?.value || product?.valueUnit}</span>
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">${product?.value || product?.valueUnit}</span>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{product?.id}</td>
+                      <td className="px-12 py-4 whitespace-nowrap text-sm text-gray-500">{product?.descuento?<CurrencyDollarIcon title='En descuento' className="h-8 w-8 text-green-500" />:<NoSymbolIcon title='Sin descuento' className="h-8 w-8 text-red-500" />}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                        <a href="#" className="text-amber-600 hover:text-amber-900">
                           Editar
                         </a>
                       </td>
