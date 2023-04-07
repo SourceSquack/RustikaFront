@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Head from "./head";
+
 import Navbar from "@/components/Navbar";
 import MenuItem from "@/components/MenuItem";
 import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 
 export default function HomePage() {
@@ -21,6 +23,7 @@ export default function HomePage() {
   }, [prevScrollPos, visible, handleScroll]);
   return (
     <div>
+      <Head />
       <div className="relative h-screen w-screen bg-[url('/images/isa.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
         <nav className="fixed top-0 left-0 w-full bg-transparent bg-opacity-70 h-16 z-10 transition-opacity duration-500 ease-in-out">
@@ -152,6 +155,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        <Contact />
       </div>
       <Footer/>
     </div>

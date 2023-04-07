@@ -4,8 +4,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 import emailjs from "emailjs-com";
 
 import MapLocation from "@/components/MapLocation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const initialState = {
   name: "",
@@ -83,7 +81,6 @@ const contact = () => {
     <div className="bg-zinc-100">
       {!showCaptcha ? (
         <div>
-          <Navbar />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:justify-between xs:mt-20">
             <div className="col-span-1 md:col-span-1 lg:col-span-1 w-full md:flex-shrink-0 p-10">
               <form
@@ -143,11 +140,10 @@ const contact = () => {
                 />
               </form>
             </div>
-            <div className="col-span-1 md:col-span-1 lg:col-span-1 content-center md:pt-10 lg:pt-44">
+            <div className="col-span-1 md:col-span-1 lg:col-span-1 lg:content-center md:pt-10 lg:pt-48 lg:m-28">
               <MapLocation />
             </div>
           </div>
-          <Footer />
         </div>
       ) : (
         <ReCAPTCHA
@@ -169,12 +165,11 @@ const contact = () => {
               <p className="text-amber-700">{formSubmitted.paragraph}</p>
             </div>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 md:col-span-1 lg:col-span-1 lg:content-center md:pt-10 lg:pt-44 lg:m-28">
             <MapLocation />
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
