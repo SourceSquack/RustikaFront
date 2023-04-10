@@ -1,21 +1,23 @@
 import React from 'react'
-import menujson from '../../menu/menujson'
+import bebidasjson from '@/pages/menu/bebidasjson';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import SearchBox from '@/components/SearchBox';
+import CarouselDrinks from '@/components/CarouselDrinks';
 
 export default function bebidasIdPage() {
     const params = useSearchParams();
     const bebidaById = params.get("id");
-    const bebidaId = menujson.find(bebida => bebida.id == bebidaById);
+    const bebidaId = bebidasjson.find(bebida => bebida.id == bebidaById);
+    const menuSugerido = bebidasjson.filter(result => result.subCategory ? result.subCategory.includes(bebidaId.subCategory) : null);
     return (
         <div className='w-full'>
             <SearchBox />
             <div className='p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6'>
-                <Image src={bebidaId.imageUrl} width={500} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen de la bebida'></Image>
+                <Image src={bebidaId.imageUrl} width={300} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen de la bebida'></Image>
                 <div className='p-2'>
                     <h2 className='text-lg mb-3 font-bold'>{bebidaId.name}</h2>
-                    {bebidaId.description ? <p className='text-lg mb-3'>
+                    {bebidaId.description ? <p className='text-md mb-3'>
                         <span className='font-semibold mr-1'>Description:</span>
                         {bebidaId.description}
                     </p> : null}
@@ -33,6 +35,7 @@ export default function bebidasIdPage() {
                     </p> : null}
                 </div>
             </div>
+            <CarouselDrinks results={menuSugerido} title={`Más ${bebidaId.subCategory}`} />
         </div>
     )
 }
