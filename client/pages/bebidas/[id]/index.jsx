@@ -1,5 +1,5 @@
 import React from 'react'
-import menujson from '../../menu/menujson'
+import bebidasjson from '@/pages/menu/bebidasjson';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import SearchBox from '@/components/SearchBox';
@@ -8,8 +8,8 @@ import CarouselDrinks from '@/components/CarouselDrinks';
 export default function bebidasIdPage() {
     const params = useSearchParams();
     const bebidaById = params.get("id");
-    const bebidaId = menujson.find(bebida => bebida.id == bebidaById);
-    const menuSugerido = menujson.filter(result => result.subCategory ? result.subCategory.includes(bebidaId.subCategory) : null);
+    const bebidaId = bebidasjson.find(bebida => bebida.id == bebidaById);
+    const menuSugerido = bebidasjson.filter(result => result.subCategory ? result.subCategory.includes(bebidaId.subCategory) : null);
     return (
         <div className='w-full'>
             <SearchBox />
