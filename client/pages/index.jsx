@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import MenuItem from "@/components/MenuItem";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import Carousel from "@/components/Carousel";
 
 
 export default function HomePage() {
@@ -54,7 +55,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="">
+      <div>
         <div className="container mx-auto mt-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-bonds rounded-lg shadow-md overflow-hidden">
@@ -63,6 +64,7 @@ export default function HomePage() {
                 alt="food"
                 className="w-full h-48 object-cover"
               />
+              {/* <Carousel /> */}
               <div className="p-6">
                 <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
                   Deliciosos cortes de carne
