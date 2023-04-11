@@ -3,6 +3,7 @@ import Head from "./head";
 import Navbar from "@/components/Navbar";
 import MenuItem from "@/components/MenuItem";
 import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 
 export default function HomePage() {
@@ -55,102 +56,7 @@ export default function HomePage() {
       <div className="">
         <div className="container mx-auto mt-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-bonds rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/images/logorustika.png"
-                alt="food"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
-                  Deliciosos cortes de carne
-                </h2>
-                <p className="text-gray-700 text-base">
-                  Nuestros cortes de carne son preparados por expertos y te
-                  harán agua la boca. ¡No te los pierdas!
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/images/logorustika.png"
-                alt="food"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
-                  Deliciosos cortes de carne
-                </h2>
-                <p className="text-gray-700 text-base">
-                  Nuestros cortes de carne son preparados por expertos y te
-                  harán agua la boca. ¡No te los pierdas!
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/images/logorustika.png"
-                alt="food"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
-                  Deliciosos cortes de carne
-                </h2>
-                <p className="text-gray-700 text-base">
-                  Nuestros cortes de carne son preparados por expertos y te
-                  harán agua la boca. ¡No te los pierdas!
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/images/logorustika.png"
-                alt="food"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
-                  Deliciosos cortes de carne
-                </h2>
-                <p className="text-gray-700 text-base">
-                  Nuestros cortes de carne son preparados por expertos y te
-                  harán agua la boca. ¡No te los pierdas!
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/images/logorustika.png"
-                alt="food"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
-                  Deliciosos cortes de carne
-                </h2>
-                <p className="text-gray-700 text-base">
-                  Nuestros cortes de carne son preparados por expertos y te
-                  harán agua la boca. ¡No te los pierdas!
-                </p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
-                src="/images/logorustika.png"
-                alt="food"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl justify-center text-center font-bold text-gray-800 mb-2">
-                  Deliciosos cortes de carne
-                </h2>
-                <p className="text-gray-700 text-base">
-                  Nuestros cortes de carne son preparados por expertos y te
-                  harán agua la boca. ¡No te los pierdas!
-                </p>
-              </div>
-            </div>
+            <Contact />
           </div>
         </div>
       </div>
