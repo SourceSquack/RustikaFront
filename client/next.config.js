@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["picsum.photos"],
+    domains: ["rustika-images.s3.us-west-2.amazonaws.com"],
   },
 };
 
