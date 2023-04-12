@@ -1,8 +1,9 @@
 import Container from './Container';
-import Phone from './Phone';
+// import Phone from './Phone';
 import Email from './Email';
 import Address from './Address';
 import MessageForm from './MessageForm';
+import MapLocation from './MapLocation';
 
 export default function Contact() {
   return (
@@ -11,13 +12,14 @@ export default function Contact() {
         <div className="flex flex-col md:flex-row w-full xl:mx-8">
           <div className="w-full md:w-1/3">
             <h3 className="text-lato text-2xl font-light text-white ml-2">Contactanos</h3>
-            <Phone />
+            {/* <Phone /> */}
             <Email />
             <Address />
           </div>
           <div className="w-full md:w-2/3 mt-6 md:mt-0">
             <MessageForm />
           </div>
+          <MapLocation />
         </div>
       </Container>
     </div>
