@@ -1,10 +1,10 @@
 import React from 'react'
-// import Carousel from './Carousel'
+import Carousel from './Carousel'
 import FilterSubCategories from './FilterSubCategories';
 
 
-export default function Results({ /* resultsMenu, */ resultsDrinks }) {
-    /* let menu = [];
+export default function Results({ resultsMenu, resultsDrinks }) {
+    let menu = [];
     resultsMenu.forEach(result => {
         if (menu.length === 0) {
             menu.push(result.category)
@@ -13,7 +13,7 @@ export default function Results({ /* resultsMenu, */ resultsDrinks }) {
                 menu.push(result.category);
             }
         }
-    }) */
+    })
     let drinks = [];
     resultsDrinks.forEach(result => {
         if (drinks.length === 0) {
@@ -28,9 +28,9 @@ export default function Results({ /* resultsMenu, */ resultsDrinks }) {
     return (<>
         <div className='max-w-6xl mx-auto'>
             <div className='text-center py-6 text-4xl font-bold'>MENU</div>
-            {/* {menu.map(cat => {
+            {menu.map(cat => {
                 return (<Carousel results={resultsMenu.filter(result => result.category.includes(cat))} title={cat} />)
-            })} */}
+            })}
             {drinks.map(cat => {
                 return (<FilterSubCategories results={resultsDrinks.filter(result => result.category.includes(cat))} title={cat} />)
             })}
