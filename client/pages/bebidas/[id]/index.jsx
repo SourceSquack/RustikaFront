@@ -38,7 +38,7 @@ export default function bebidasIdPage({ bebida, dataMenu }) {
 
 export const getServerSideProps = async (context) => {
     const bebidaById = context.query.id;
-    const response = await fetch(`https://of83tjkece.execute-api.us-west-2.amazonaws.com/bebidas/${bebidaById}`);
+    const response = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas/${bebidaById}`);
 
     const data = await response.json();
 
@@ -52,7 +52,7 @@ export const getServerSideProps = async (context) => {
         img: data.img
     }
 
-    const responseMenu = await fetch(`https://of83tjkece.execute-api.us-west-2.amazonaws.com/bebidas?subCategory=${bebida.subCategory}&limit=138`);
+    const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?subCategory=${bebida.subCategory}&limit=138`);
     const dataMenu = await responseMenu.json();
 
     return {

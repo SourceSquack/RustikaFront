@@ -34,7 +34,7 @@ export default function menuIdPage({ menu, dataMenuSug }) {
 
 export const getServerSideProps = async (context) => {
     const menuById = context.query.id;
-    const response = await fetch(`https://of83tjkece.execute-api.us-west-2.amazonaws.com/platos/${menuById}`);
+    const response = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos/${menuById}`);
 
     const data = await response.json();
 
@@ -46,7 +46,7 @@ export const getServerSideProps = async (context) => {
         img: data.img
     }
 
-    const responseMenuSug = await fetch(`https://of83tjkece.execute-api.us-west-2.amazonaws.com/platos?category=${menu.category}&limit=138`);
+    const responseMenuSug = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?category=${menu.category}&limit=138`);
     const dataMenuSug = await responseMenuSug.json();
 
     return {
