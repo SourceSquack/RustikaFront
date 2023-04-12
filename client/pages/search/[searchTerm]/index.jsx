@@ -8,7 +8,10 @@ export default function search({ menuSearch, bebidasSearch, search }) {
     return (
         <div>
             <SearchBox />
-            {menu.length > 0 || bebidas.length > 0 ? <Results resultsMenu={menu} resultsDrinks={bebidas} /> :
+            {menu.length > 0 || bebidas.length > 0 ? <>
+                <h1 className='text-center py-6 text-4xl font-bold'>Resultados para la busqueda "{search}"</h1>
+                <Results resultsMenu={menu} resultsDrinks={bebidas} />
+            </> :
                 <h1 className='text-center py-6 text-4xl font-bold'>No hay resultados para la busqueda "{search}"</h1>}
         </div>
     )
