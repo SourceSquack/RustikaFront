@@ -1,20 +1,16 @@
 import React from 'react'
-import bebidasjson from '@/pages/menu/bebidasjson';
-import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import SearchBox from '@/components/SearchBox';
 import CarouselDrinks from '@/components/CarouselDrinks';
 
-export default function bebidasIdPage() {
-    const params = useSearchParams();
-    const bebidaById = params.get("id");
-    const bebidaId = bebidasjson.find(bebida => bebida.id == bebidaById);
-    const menuSugerido = bebidasjson.filter(result => result.subCategory ? result.subCategory.includes(bebidaId.subCategory) : null);
+export default function bebidasIdPage({ bebida, dataMenu }) {
+    const bebidaId = bebida
+    
     return (
         <div className='w-full'>
             <SearchBox />
             <div className='p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6'>
-                <Image src={bebidaId.imageUrl} width={300} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen de la bebida'></Image>
+                <Image src={bebidaId.img} width={300} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen de la bebida'></Image>
                 <div className='p-2'>
                     <h2 className='text-lg mb-3 font-bold'>{bebidaId.name}</h2>
                     {bebidaId.description ? <p className='text-md mb-3'>
@@ -35,7 +31,34 @@ export default function bebidasIdPage() {
                     </p> : null}
                 </div>
             </div>
-            <CarouselDrinks results={menuSugerido} title={`Más ${bebidaId.subCategory}`} />
+            <CarouselDrinks results={dataMenu.docs} title={`Más ${bebidaId.subCategory}`} />
         </div>
     )
+}
+
+export const getServerSideProps = async (context) => {
+    const bebidaById = context.query.id;
+    const response = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas/${bebidaById}`);
+
+    const data = await response.json();
+
+    const bebida = {
+        name: data.name,
+        description: data.description || "",
+        category: data.category,
+        subCategory: data.subCategory,
+        valueUnit: data.valueUnit,
+        valueJug: data.valueJug || 0,
+        img: data.img
+    }
+
+    const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?subCategory=${bebida.subCategory}&limit=138`);
+    const dataMenu = await responseMenu.json();
+
+    return {
+        props: {
+            bebida,
+            dataMenu
+        }
+    }
 }

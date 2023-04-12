@@ -1,10 +1,8 @@
 import React from 'react';
-import menujson from '@/pages/menu/menujson';
 import Image from 'next/image';
 
-const ModalCardMenu = ({ onClose, id }) => {
-    const menuById = id;
-    const menuId = menujson.find(menu => menu.id == menuById);
+const ModalCardMenu = ({ onClose, menu }) => {
+    const menuId = menu
     return (
         <div className="fixed z-10 inset-0 overflow-y-auto">
             <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
@@ -14,7 +12,7 @@ const ModalCardMenu = ({ onClose, id }) => {
                 <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
                 <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
                     <div className='p-4 md:pt-8 flex flex-col md:flex-row items-center content-center max-w-6xl mx-auto md:space-x-6'>
-                        <Image src={menuId.imageUrl} width={300} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen del menu'></Image>
+                        <Image src={menuId.img} width={300} height={300} className='rounded-lg' style={{ maxWidth: "100%", height: "100%" }} alt='Imagen del menu'></Image>
                         <div className='p-2'>
                             <h2 className='text-lg mb-3 font-bold'>{menuId.name}</h2>
                             {menuId.description ? <p className='text-md mb-3'>

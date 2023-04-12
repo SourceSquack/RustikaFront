@@ -65,12 +65,12 @@ export default function MessageForm() {
   };
 
   return formSubmitted.title === '' ? (
-    <div>
-      <h3 className="text-lato text-2xl font-light text-white">Send me a message</h3>
+    <div className=''>
+      <h3 className="text-lato text-2xl font-light text-zinc-900">Send me a message</h3>
       {!showCaptcha ? (
-        <form onSubmit={submitFormAndShowCaptcha}>
-          <div className="flex font-open-sans justify-start flex-col sm:flex-row">
-            <div className="sm:mr-4 w-100 sm:w-1/2 md:w-2/5 flex flex-col items-end">
+        <form onSubmit={submitFormAndShowCaptcha} >
+          <div className="flex font-open-sans justify-center flex-row sm:flex-row ">
+            <div className="sm:mr-4 w-auto sm:w-1/2 md:w-2/5 flex flex-col items-end lg:w-full lg:m-6">
               <label className="block text-gray-500 font-bold my-2 w-full" htmlFor="contact-form-name">
                 Name:
                 <input
@@ -93,8 +93,6 @@ export default function MessageForm() {
                   required
                 />
               </label>
-            </div>
-            <div className="sm:mx-4 w-full sm:w-1/2 md:w-3/5">
               <label className="block text-gray-500 font-bold my-2" htmlFor="contact-form-message">
                 Message:
                 <textarea
@@ -107,14 +105,15 @@ export default function MessageForm() {
                   required
                 />
               </label>
+              <div className="w-full flex justify-end items-center flex-col sm:flex-row">
+                {showFormErr ? <p className="sm:mr-4 text-red-400">Please fill in all three input boxes to send a message</p> : null}
+                <button className="bg-theme-green text-white py-2 px-4 mt-6 sm:mr-4 rounded focus:outline-none focus:shadow-outline w-full md:w-1/4 lg:w-1/5" type="submit">
+                  Send
+                </button>
+              </div>
             </div>
           </div>
-          <div className="w-full flex justify-end items-center flex-col sm:flex-row">
-            {showFormErr ? <p className="sm:mr-4 text-red-400">Please fill in all three input boxes to send a message</p> : null}
-            <button className="bg-theme-green text-white py-2 px-4 mt-6 sm:mr-4 rounded focus:outline-none focus:shadow-outline w-full md:w-1/4 lg:w-1/5" type="submit">
-              Send
-            </button>
-          </div>
+
         </form>
       ) : (
         <ReCAPTCHA
