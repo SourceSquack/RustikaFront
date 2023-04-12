@@ -20,7 +20,7 @@ export default function Carousel({ results, title }) {
             <div id={title} className='carpusel p-4 flex items-center justify-start overflow-x-auto scroll-smooth'>
                 {results.map((result) => (
                     <div>
-                        <CardDrink key={result.id} result={result} />
+                        <CardDrink key={result._id} result={result} />
                     </div>
                 ))}
             </div>
