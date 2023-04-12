@@ -41,9 +41,9 @@ export default function HomePage() {
           </p>
           <div className="flex justify-center mt-10 gap-5">
             <div className="flex justify-center mt-10">
-            <button className="bg-olive text-white text-center px-8 py-3 rounded-full text-lg font-medium">
-              <MenuItem title="Reservar" address="/reservar" />
-            </button>
+              <button className="bg-olive text-white text-center px-8 py-3 rounded-full text-lg font-medium">
+                <MenuItem title="Reservar" address="/reservar" />
+              </button>
             </div>
             <div className="flex justify-center mt-10">
               <button className="bg-olive text-white px-12 py-3 text-center rounded-full text-lg font-medium">
@@ -54,13 +54,13 @@ export default function HomePage() {
         </div>
       </div>
       <div className="">
-        <div className="container mx-auto mt-20">
+        <div className="lg:w-screen lg:my-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Contact />
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
