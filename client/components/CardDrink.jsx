@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import ModalCardMenu from './ModalCardMenu';
+import ModalCardDrink from './ModalCardDrink';
 
 export default function Card({ result }) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleOpenModal = () => {
-        window.history.pushState({ modal: true }, '', `/menu/${result.id}`);
+        window.history.pushState({ modal: true }, '', `/bebidas/${result.id}`);
 
         setIsModalOpen(true);
     };
@@ -24,13 +24,16 @@ export default function Card({ result }) {
             <div className='bottom border-t-2 border-gray-300 flex flex-col justify-center items-start p-5'>
                 <h2 className='name text-lg font-bold'>{result.name}</h2>
                 {result.description ? <p className='description line-clamp-2 text-sm font-light'>{result.description}</p> : null}
-                <p className='price text-lg font-medium'>$ {result.value}</p>
+                {result.valueJug ? <>
+                    <p className='price text-lg font-medium'>Unidad: $ {result.valueUnit}</p>
+                    <p className='price text-lg font-medium'>Jarra: ${result.valueJug} </p>
+                </> : <p className='price text-lg font-medium'>$ {result.valueUnit}</p>}
                 <button className="px-2 py-1 text-sm bg-amber-600 text-white rounded hover:bg-amber-500" onClick={handleOpenModal}>
                     Ver más
                 </button>
             </div>
             {isModalOpen && (
-                <ModalCardMenu onClose={handleCloseModal} id={result.id} />
+                <ModalCardDrink onClose={handleCloseModal} id={result.id} />
             )}
         </div>
     )

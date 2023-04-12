@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed z-40">
       <div
-        className={`px-4 md:px-16 py-1 flex flex-row items-center transition duration-500 ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""
+        className={`px-1 md:px-4 py-1 flex md:justify-between items-center transition duration-500 ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""
           }`}
       >
         <div>
@@ -50,7 +50,7 @@ const Navbar = () => {
             alt="Logo"
           />
         </div>
-        <div className="ml-19 mx-14 gap-6 hidden md:flex text-lg">
+        <div className="ml-19 mx-4 gap-6 hidden md:flex  text-lg">
           <NavbarItem label="Home" address="/" />
           <NavbarItem label="Menú" address="/menu" />
           <NavbarItem label="Bar" address="/bar" />

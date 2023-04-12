@@ -1,13 +1,39 @@
 import React from 'react'
-import Card from './Card'
+import Carousel from './Carousel'
+import FilterSubCategories from './FilterSubCategories';
 
 
-export default function Results({ results }) {
-    return (
-        <div className='sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 max-w-6xl mx-auto py-4'>
-            {results.map((result) => (
-                <Card key={result.id} result={result} />
-            ))}
+export default function Results({ resultsMenu, resultsDrinks }) {
+    let menu = [];
+    resultsMenu.forEach(result => {
+        if (menu.length === 0) {
+            menu.push(result.category)
+        } else {
+            if (!menu.includes(result.category)) {
+                menu.push(result.category);
+            }
+        }
+    })
+    let drinks = [];
+    resultsDrinks.forEach(result => {
+        if (drinks.length === 0) {
+            drinks.push(result.category)
+        } else {
+            if (!drinks.includes(result.category)) {
+                drinks.push(result.category);
+            }
+        }
+    })
+
+    return (<>
+        <div className='max-w-6xl mx-auto'>
+            <div className='text-center py-6 text-4xl font-bold'>MENU</div>
+            {menu.map(cat => {
+                return (<Carousel results={resultsMenu.filter(result => result.category.includes(cat))} title={cat} />)
+            })}
+            {drinks.map(cat => {
+                return (<FilterSubCategories results={resultsDrinks.filter(result => result.category.includes(cat))} title={cat} />)
+            })}
         </div>
-    )
+    </>)
 }
