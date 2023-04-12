@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function Container({ children }) {
   return (
-    <div className="w-screen flex justify-center">
+    <div className="w-screen flex justify-center bg-green-400">
       <div className="flex px-4 w-full xl:w-xl">
         {children}
       </div>
