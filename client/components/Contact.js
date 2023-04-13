@@ -7,12 +7,12 @@ import MapLocation from './MapLocation';
 
 export default function Contact() {
   return (
-    <div className="text-gray-a1 border-b border-theme-light-blue bg-theme-navy-blue text-sm p-8 flex justify-between w-screen">
+    <div className="text-gray-a1 border-b border-theme-light-blue bg-theme-navy-blue text-sm p-8 flex justify-between w-screen lg:w-100% bg-red-400 lg:m-0 lg:px-0">
       <Container>
-        <div className="flex flex-col md:flex-row w-full lg:grid lg:grid-cols-3 gap-4">
-          <div className="w-full md:w-1/3">
+        <div className=" w-full lg:grid lg:grid-cols-3 gap-4">
+          <div className="w-full md:w-full bg-yellow-300 lg:py-6">
             <h3 className="text-lato text-2xl font-light text-zinc-900 ml-2">Contactanos</h3>
-            <div className='flex flex-col justify-around p-3 lg:w-full'>
+            <div className='p-3 lg:w-full lg:flex lg:flex-col justify-evenly lg:align-middle lg:text-lg'>
               <Phone />
               <Email />
               <Address />
