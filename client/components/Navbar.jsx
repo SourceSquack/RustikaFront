@@ -54,7 +54,7 @@ const Navbar = () => {
           <NavbarItem label="Home" address="/" />
           <NavbarItem label="Menú" address="/menu" />
           <NavbarItem label="Bar" address="/bar" />
-          <NavbarItem label="Contact" address="/contact" />
+          <NavbarItem label="Reservar" address="/reservar" />
           <NavbarItem label="Nosotros" address="/about" />
         </div>
         <div
