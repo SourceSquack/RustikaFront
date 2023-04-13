@@ -2,13 +2,8 @@
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { BellIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-// import { useAuth } from '@hooks/useAuth';
+import { useRouter } from 'next/router';
 
-const navigation = [
-  { name: 'Platos', href: '/dashboard/menu', current: true },
-  { name: 'Bebidas', href: '/dashboard/bebidas/', current: false },
-  { name: 'Reservas', href: '/reservas', current: false },
-];
 const userNavigation = [
   { name: 'Perfil', href: '#' },
   { name: 'Configuración', href: '#' },
@@ -20,13 +15,12 @@ function classNames(...classes) {
 }
 
 export default function NavDash() {
-  // const auth = useAuth();
-
-  // const userData = {
-  //   name: auth?.user?.name,
-  //   email: auth?.user?.email,
-  //   imageUrl: auth?.user?.avatar,
-  // };
+  const router = useRouter().asPath;
+  const navigation = [
+    { name: 'Platos', href: '/dashboard/platos', current: router==='/dashboard/platos' },
+    { name: 'Bebidas', href: '/dashboard/bebidas/', current: router==='/dashboard/bebidas' },
+    { name: 'Reservas', href: '/reservas', current: router==='/dashboard/reservas' },
+  ];
   const userData = undefined;
   return (
     <>

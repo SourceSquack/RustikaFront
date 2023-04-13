@@ -182,7 +182,7 @@ export default function MenuDashboard({products, totalProducts, limit}) {
 
 export const getServerSideProps = async () => {
   console.log(page);
-  const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?page=${page}`);
+  const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?page=${page}`);
   const dataMenu = await responseMenu.json();
   return {
       props: {
