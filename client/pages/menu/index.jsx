@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import Results from '@/components/Results';
 import SearchBox from '@/components/SearchBox';
 import React from 'react';
@@ -7,6 +8,7 @@ export default function MenuPage({ bebidas, platos }) {
         <>
             <SearchBox />
             <Results resultsMenu={platos} resultsDrinks={bebidas} />
+            <Footer />
         </>
     );
 }
