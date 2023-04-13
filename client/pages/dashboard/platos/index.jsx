@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -6,27 +6,34 @@ import {
   NoSymbolIcon,
 } from '@heroicons/react/20/solid'
 import Paginator from "@/components/Paginator";
-// import useFetch from "@hooks/useFetch";
-// import endPoints from "@services/api";
 import { Menu, Transition } from '@headlessui/react'
 import Modal from '@/components/Modal';
-import FormProduct from '@/components_dash/FormProducts';
+import FormProduct from '@/components/FormProducts';
 import useAlert from '@/hooks/useAlert';
 import Alert from '@/Components/Alert';
-import MenuJSON from '@/pages/menu/menujson';
-import Nav from '@/components_dash/Nav';
+import Nav from '@/components/Nav';
 
-const PRODUCT_LIMIT = 5;
+let page = 1;
 
-export default function MenuDashboard() {
-  const [offsetProducts, setOffsetProducts] = useState(0);
+export default function MenuDashboard({products, totalProducts, limit}) {
   const [open, setOpen] = useState(false);
   const {alert, setAlert, toggleAlert} = useAlert();
+  const [products2, setProducts2] = useState([]);
 
-//   const products = useFetch(endPoints.products.getProducts(PRODUCT_LIMIT, offsetProducts), offsetProducts);
-//   const totalProducts = useFetch(endPoints.products.getProducts(0, 0)).length;
-const products = MenuJSON.slice(offsetProducts, offsetProducts+PRODUCT_LIMIT);
-const totalProducts = MenuJSON.length;
+  const getProducts = () => {
+    fetch(`https://08rjkobk59.execute-api.us-west-2.amazonaws.com/test`)
+    .then(res=>res.json())
+    .then(response=>setProducts2(response.docs))
+    .catch(err=>console.log(err))
+  };
+
+  const changePage = (pag)=>{
+    console.log(pag);
+    page = pag;
+    getServerSideProps();
+  }
+
+  useEffect(()=>getProducts,[]);
 
   return (
     <>
@@ -123,7 +130,7 @@ const totalProducts = MenuJSON.length;
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 h-10 w-10">
-                            <img className="h-10 w-10 rounded-full" src={product?.imageUrl} alt="" />
+                            <img className="h-10 w-10 rounded-full" src={product?.img} alt="" />
                           </div>
                           <div className="ml-4">
                             <div className="text-sm font-medium text-gray-900">{product?.name}</div>
@@ -137,7 +144,7 @@ const totalProducts = MenuJSON.length;
                       <td className="px-6 py-4 whitespace-nowrap">
                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">${product?.value || product?.valueUnit}</span>
                       </td>
-                      <td className="px-12 py-4 whitespace-nowrap text-sm text-gray-500">{product?.descuento?<CurrencyDollarIcon title='En descuento' className="h-8 w-8 text-green-500" />:<NoSymbolIcon title='Sin descuento' className="h-8 w-8 text-red-500" />}</td>
+                      <td className="px-12 py-4 whitespace-nowrap text-sm text-gray-500">{product?.discount?<CurrencyDollarIcon title='En descuento' className="h-8 w-8 text-green-500" />:<NoSymbolIcon title='Sin descuento' className="h-8 w-8 text-red-500" />}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <a href="#" className="text-amber-600 hover:text-amber-900">
                           Editar
@@ -153,7 +160,7 @@ const totalProducts = MenuJSON.length;
                 </tbody>
               </table>
             </div>
-            {totalProducts > 0 && <Paginator totalItems={totalProducts} itemsPerPage={PRODUCT_LIMIT} setOffset={setOffsetProducts} neighbours={3}></Paginator>}
+            {totalProducts > 0 && <Paginator totalItems={totalProducts} itemsPerPage={limit} setOffset={changePage} neighbours={3}></Paginator>}
           </div>
         </div>
       </div>
@@ -162,4 +169,17 @@ const totalProducts = MenuJSON.length;
       </Modal>
     </>
   )
+}
+
+export const getServerSideProps = async () => {
+  console.log(page);
+  const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?page=${page}`);
+  const dataMenu = await responseMenu.json();
+  return {
+      props: {
+          products: dataMenu.docs,
+          totalProducts: dataMenu.total,
+          limit: dataMenu.limit,
+      }
+  }
 }
