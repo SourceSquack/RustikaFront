@@ -5,11 +5,10 @@ export default function Address() {
     <div className="w-full flex m-2 items-start ">
       <div className="flex items-center">
         <FaCompass />
-        <p className="ml-2">Address: </p>
+        <p className="ml-2">Dirección: </p>
       </div>
-      <div className="ml-1 w-1/2">
-        <p>Filandia - Quindío Cra 4 Calle 1,</p>
-        <p>barrio La Colonia. Vía mirador.</p>
+      <div className="ml-1 w-1/2 md:w-full">
+        <p>Filandia - Quindío Cra 4 Calle 1, barrio La Colonia. Vía mirador</p>
       </div>
     </div>
   );
