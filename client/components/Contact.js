@@ -21,7 +21,7 @@ export default function Contact() {
           <div className=" sm:my-6 md:mt-0 w-full">
             <MessageForm />
           </div>
-          <div className=''>
+          <div className='my-6'>
             <MapLocation />
           </div>
         </div>

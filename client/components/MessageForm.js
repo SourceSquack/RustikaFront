@@ -66,7 +66,7 @@ export default function MessageForm() {
 
   return formSubmitted.title === '' ? (
     <div className=''>
-      <h3 className="text-lato text-2xl font-light text-zinc-900 lg:pt-6 lg:text-3xl">Send me a message</h3>
+      <h3 className=" text-lato text-2xl font-light text-zinc-900 lg:pt-6 lg:text-3xl lg:ml-6">Enviar mensaje</h3>
       {!showCaptcha ? (
         <form onSubmit={submitFormAndShowCaptcha} >
           <div className="flex font-open-sans justify-center flex-row sm:flex-row ">
@@ -94,7 +94,7 @@ export default function MessageForm() {
                 />
               </label>
               <label className="block text-gray-500 font-bold my-2 w-full" htmlFor="contact-form-message">
-                Message:
+                Mensaje:
                 <textarea
                   rows="5"
                   id="contact-form-message"
@@ -108,7 +108,7 @@ export default function MessageForm() {
               <div className=" pb-6 w-full flex justify-end items-center flex-col sm:flex-row md:justify-start">
                 {showFormErr ? <p className="sm:mr-4 text-red-400">Please fill in all three input boxes to send a message</p> : null}
                 <button className="bg-zinc-800 text-white py-2 px-4 mt-6 sm:mr-4 rounded focus:outline-none focus:shadow-outline w-full md:w-1/4 lg:w-1/5 " type="submit">
-                  Send
+                  Enviar
                 </button>
               </div>
             </div>
