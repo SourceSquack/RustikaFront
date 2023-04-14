@@ -7,22 +7,21 @@ import MapLocation from './MapLocation';
 
 export default function Contact() {
   return (
-    <div className="text-gray-a1 border-b border-theme-light-blue bg-theme-navy-blue text-sm p-8 flex justify-between w-screen lg:w-100% bg-red-400 lg:m-0 lg:px-0">
+    <div className="text-gray-a1 border-b border-theme-light-blue bg-theme-navy-blue text-sm p-8 flex justify-between w-screen lg:w-100%  lg:m-0 lg:px-0">
       <Container>
-        <div className=" w-full lg:grid lg:grid-cols-3 gap-4">
-          <div className="w-full md:w-full bg-yellow-300 lg:py-6">
-            <h3 className="text-lato text-2xl font-light text-zinc-900 ml-2">Contactanos</h3>
-            <div className='p-3 lg:w-full lg:flex lg:flex-col justify-evenly lg:align-middle lg:text-lg'>
+        <div className=" w-full lg:grid lg:grid-cols-3">
+          <div className="w-full md:w-full  lg:py-6 lg:flex lg:flex-col lg:justify-star lg:text:2xl">
+            <h3 className="text-lato text-2xl font-light text-zinc-900 ml-2 lg:text-3xl">Contactanos</h3>
+            <div className='p-3 lg:w-full lg:flex lg:flex-col justify-evenly lg:align-middle lg:text-lg lg:mt-12'>
               <Phone />
               <Email />
               <Address />
             </div>
           </div>
-          <div className="lg:w-auto md:w-2/3 mt-6 md:mt-0">
+          <div className=" sm:my-6 md:mt-0 w-full">
             <MessageForm />
           </div>
           <div className=''>
-            <h1>MAPA</h1>
             <MapLocation />
           </div>
         </div>
