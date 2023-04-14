@@ -5,7 +5,7 @@ export const Phone = () => {
         <div className="w-full flex m-2 items-start lg:flex flex-row">
             <div className="flex items-center">
                 <FaPhoneAlt />
-                <p className="ml-2">Phone: </p>
+                <p className="ml-2">Teléfono: </p>
             </div>
             <div className="ml-1 w-full">
                 <p>315 788 0615</p>
