@@ -18,7 +18,7 @@ export default function Contact() {
               <Address />
             </div>
           </div>
-          <div className=" md:w-2/3 mt-6 md:mt-0 lg:w-full">
+          <div className=" sm:my-6 md:mt-0 w-full">
             <MessageForm />
           </div>
           <div className=''>

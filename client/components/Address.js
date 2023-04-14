@@ -7,7 +7,7 @@ export default function Address() {
         <FaCompass />
         <p className="ml-2">Address: </p>
       </div>
-      <div className="ml-1 w-1/2 lg:w-full">
+      <div className="ml-1 w-1/2 md:w-full">
         <p>Filandia - Quindío Cra 4 Calle 1, barrio La Colonia. Vía mirador</p>
       </div>
     </div>
