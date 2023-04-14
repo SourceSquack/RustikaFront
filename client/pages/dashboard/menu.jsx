@@ -12,7 +12,7 @@ import { Menu, Transition } from '@headlessui/react'
 import Modal from '@/components/Modal';
 import FormProduct from '@/components_dash/FormProducts';
 import useAlert from '@/hooks/useAlert';
-import Alert from '@/components/alert';
+import Alert from '@/components/Alert';
 import MenuJSON from '@/pages/menu/menujson';
 import Nav from '@/components_dash/Nav';
 
