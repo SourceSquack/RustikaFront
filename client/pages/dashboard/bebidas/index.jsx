@@ -179,13 +179,13 @@ export default function MenuDashboard({products, totalProducts, limit}) {
       <Modal open={open} setOpen={setOpen}>
         <FormProduct setAlert={setAlert} setOpen={setOpen} />
       </Modal>
-      <MessageDelete open={openDelete} setOpen={setOpenDelete} product="plato" />
+      <MessageDelete open={openDelete} setOpen={setOpenDelete} product="bebida" />
     </>
   )
 }
 
 export const getServerSideProps = async () => {
-  const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?page=${page}`);
+  const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?page=${page}`);
   const dataMenu = await responseMenu.json();
   return {
       props: {
