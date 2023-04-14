@@ -10,15 +10,9 @@ import { Menu, Transition } from '@headlessui/react'
 import Modal from '@/components/Modal';
 import FormProduct from '@/components/FormProducts';
 import useAlert from '@/hooks/useAlert';
-<<<<<<< HEAD:client/pages/dashboard/menu.jsx
-import Alert from '@/components/Alert';
-import MenuJSON from '@/pages/menu/menujson';
-import Nav from '@/components_dash/Nav';
-=======
 import Alert from '@/Components/Alert';
 import Nav from '@/components/Nav';
 import MessageDelete from '@/components/MessageDelete';
->>>>>>> daedbfcdf6c5b03d4e5b2d862212743b0771d2ee:client/pages/dashboard/platos/index.jsx
 
 let page = 1;
 
