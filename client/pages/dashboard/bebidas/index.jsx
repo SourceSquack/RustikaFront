@@ -12,24 +12,24 @@ import FormProduct from '@/components/FormProducts';
 import useAlert from '@/hooks/useAlert';
 import Alert from '@/Components/Alert';
 import Nav from '@/components/Nav';
+import MessageDelete from '@/components/MessageDelete';
 
 let page = 1;
 
 export default function MenuDashboard({products, totalProducts, limit}) {
   const [open, setOpen] = useState(false);
+  const [openDelete, setOpenDelete] = useState(false);
   const {alert, setAlert, toggleAlert} = useAlert();
   const [products2, setProducts2] = useState([]);
 
   const getProducts = () => {
     fetch(`https://08rjkobk59.execute-api.us-west-2.amazonaws.com/test`, {
       method: 'POST',
-      body: JSON.stringify({
-        name: 'John Doe',
-        email: 'johndoe@example.com'
-      }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Access-Control-Allow-Origin" : "http://localhost:3000/", // Required for CORS support to work
+        // "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+      },
+  
     })
     .then(res=>res.json())
     .then(response=>setProducts2(response.docs))
@@ -37,7 +37,6 @@ export default function MenuDashboard({products, totalProducts, limit}) {
   };
 
   const changePage = (pag)=>{
-    console.log(pag);
     page = pag;
     getServerSideProps();
   }
@@ -160,7 +159,11 @@ export default function MenuDashboard({products, totalProducts, limit}) {
                         </a>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <a href="#" className="text-red-600 hover:text-red-900">
+                        <a href="#" className="text-red-600 hover:text-red-900"
+                          onClick={()=>{
+                            setOpenDelete(true);
+                          }}
+                        >
                           Eliminar
                         </a>
                       </td>
@@ -176,12 +179,12 @@ export default function MenuDashboard({products, totalProducts, limit}) {
       <Modal open={open} setOpen={setOpen}>
         <FormProduct setAlert={setAlert} setOpen={setOpen} />
       </Modal>
+      <MessageDelete open={openDelete} setOpen={setOpenDelete} product="bebida" />
     </>
   )
 }
 
 export const getServerSideProps = async () => {
-  console.log(page);
   const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?page=${page}`);
   const dataMenu = await responseMenu.json();
   return {
