@@ -10,7 +10,7 @@ import { Menu, Transition } from '@headlessui/react'
 import Modal from '@/components/Modal';
 import FormProduct from '@/components/FormProducts';
 import useAlert from '@/hooks/useAlert';
-import Alert from '@/Components/Alert';
+import Alert from '@/components/Alert';
 import Nav from '@/components/Nav';
 import MessageDelete from '@/components/MessageDelete';
 

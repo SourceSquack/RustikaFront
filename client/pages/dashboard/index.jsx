@@ -3,7 +3,7 @@ import { useRef } from 'react';
 // import { useAuth } from '@hooks/useAuth';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import Alert from '@/components/alert';
+import Alert from '@/components/Alert';
 import useAlert from '@/hooks/useAlert';
 
 export default function LoginPage() {

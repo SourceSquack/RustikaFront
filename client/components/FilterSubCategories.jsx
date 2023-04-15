@@ -15,8 +15,8 @@ export default function FilterSubCategories({ results, title }) {
     
     return (<>
         <div className='text-center py-4 text-2xl font-bold'>{title}</div>
-        {drinksSubCat.map(subCat => {
-            return (<CarouselDrinks results={results.filter(result => result.subCategory.includes(subCat))} title={subCat} />)
+        {drinksSubCat.map((subCat, index) => {
+            return (<CarouselDrinks key={index} results={results.filter(result => result.subCategory.includes(subCat))} title={subCat} />)
         })}
     </>
     )
