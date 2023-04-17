@@ -18,8 +18,8 @@ export default function Carousel({ results, title }) {
                 <button className='p-2 m-2 rounded-full bg-white' onClick={scrollRight}><FiChevronRight /></button>
             </div>
             <div id={title} className='carpusel p-4 flex items-center justify-start overflow-x-auto scroll-smooth'>
-                {results.map((result) => (
-                    <div>
+                {results.map((result, index) => (
+                    <div key={index}>
                         <Card key={result._id} result={result} />
                     </div>
                 ))}
