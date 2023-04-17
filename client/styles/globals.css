@@ -1,6 +1,6 @@
-@import './styles/dummy.css';
+
 @tailwind base;
-@tailwind Components;
+@tailwind components;
 @tailwind utilities;
 
 ::-webkit-scrollbar{

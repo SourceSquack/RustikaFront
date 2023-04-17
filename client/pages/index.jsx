@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Head from "./head";
-import Navbar from "../components/Navbar";
-import MenuItem from "../components/MenuItem";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
+import Navbar from "@/components/Navbar";
+import MenuItem from "@/components/MenuItem";
+import Footer from "@/components/Footer";
+import Contact from "@/components/Contact";
 
 
 export default function HomePage() {
