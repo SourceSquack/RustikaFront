@@ -14,9 +14,9 @@ export default function MenuPage({ bebidas, platos }) {
 }
 
 export const getServerSideProps = async () => {
-    const responseDrinks = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?limit=138');
+    const responseDrinks = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?limit=138', {cache: 'no-store'});
     const dataDrinks = await responseDrinks.json();
-    const responseMenu = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?limit=138');
+    const responseMenu = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?limit=138', {cache: 'no-store'});
     const dataMenu = await responseMenu.json();
     return {
         props: {
