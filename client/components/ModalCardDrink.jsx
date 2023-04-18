@@ -29,7 +29,7 @@ export default function ModalCardDrink({ onClose, drink }) {
                                 <span className='font-semibold mr-1'>Unidad $</span>{drinkId.valueUnit}
                             </p>
                             {drinkId.valueJug ? <p className='mb-3'>
-                                <span className='font-semibold mr-1'> Jarra$</span>{drinkId.valueJug}
+                                <span className='font-semibold mr-1'> Jarra $</span>{drinkId.valueJug}
                             </p> : null}
                         </div>
                     </div>
