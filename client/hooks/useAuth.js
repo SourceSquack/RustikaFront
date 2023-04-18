@@ -15,7 +15,7 @@ export const useAuth = () => {
 function useProvideAuth(params) {
     const [user, setUser] = useState(null);
     
-    const signIn = async (user, password) => {
+    const signIn = async (user, password, keepSession) => {
         try {
             const options = {
                 headers: {
@@ -28,7 +28,7 @@ function useProvideAuth(params) {
             const {data: accessToken} = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/login', options);
             if(accessToken){
                 const token = accessToken.accessToken;
-                Cookie.set('token', token, {expires: 7});
+                Cookie.set('token', token, keepSession?{expires: 7}:{});
                 console.log(token);
 
                 // axios.defaults.headers.Authorization = ` Bearer ${token}`;

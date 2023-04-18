@@ -9,6 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 export default function LoginPage() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
+  const keepSessionRef = useRef(null);
   const {alert, setAlert, toggleAlert} = useAlert();
   const router = useRouter();
   const auth = useAuth();
@@ -17,8 +18,9 @@ export default function LoginPage() {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    const keepSession = keepSessionRef.current.checked;
 
-    auth.signIn(email, password).then(() => {
+    auth.signIn(email, password, keepSession).then(() => {
       router.push('/dashboard/platos');
     }).catch(err => {
       setAlert({
@@ -84,7 +86,9 @@ export default function LoginPage() {
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-amber-600 focus:ring-amber-600 border-gray-300 rounded" />
+                  <input id="remember-me" name="remember-me" type="checkbox" className="h-4 w-4 text-amber-600 focus:ring-amber-600 border-gray-300 rounded" 
+                    ref={keepSessionRef}
+                  />
                   <label htmlFor="remember-me" className="ml-2 block text-sm text-amber-600">
                     Mantener sesión
                   </label>
