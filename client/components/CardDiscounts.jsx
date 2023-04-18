@@ -3,16 +3,21 @@ import React, { useState } from 'react';
 
 export default function CardDiscounts({ result }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const menuCategories = ["Entrada", "Platos Fuertes", "Adiciones", "Adiciones", "Adiciones"];
 
     const handleOpenModal = () => {
-        window.history.pushState({ modal: true }, '', `/menu/${result._id}`);
+        if (menuCategories.includes(result.category)) {
+            window.history.pushState({ modal: true }, '', `/menu/${result._id}`);
+            setIsModalOpen(true);
+        } else {
+            window.history.pushState({ modal: true }, '', `/bebidas/${result._id}`);
+            setIsModalOpen(true);
+        }
 
-        setIsModalOpen(true);
     };
 
     const handleCloseModal = () => {
         window.history.go(-1);
-
         setIsModalOpen(false);
     };
 

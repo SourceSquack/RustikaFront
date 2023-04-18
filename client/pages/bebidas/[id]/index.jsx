@@ -4,8 +4,7 @@ import SearchBox from '@/components/SearchBox';
 import CarouselDrinks from '@/components/CarouselDrinks';
 
 export default function bebidasIdPage({ bebida, dataMenu }) {
-    const bebidaId = bebida
-    
+    const bebidaId = bebida;
     return (
         <div className='w-full'>
             <SearchBox />
@@ -23,9 +22,17 @@ export default function bebidasIdPage({ bebida, dataMenu }) {
                     {bebidaId.subCategory ? <p className='mb-3'>
                         <span className='font-semibold mr-1'>Subcategoria:</span>{bebidaId.subCategory}
                     </p> : null}
-                    <p className='mb-3'>
-                        <span className='font-semibold mr-1'>Unidad $</span>{bebidaId.valueUnit}
-                    </p>
+                    {bebidaId.discount === true ?
+                        <div className='flex items-center'>
+                            {bebidaId.newValue ? <p className='price text-lg font-medium'>$ {bebidaId.newValue}</p> : <p className='price text-lg font-medium'>Unidad: ${bebidaId.newValueUnit}</p>}
+                            {bebidaId.value ? <del className='price ml-2 text-xs font-medium'>
+                                $ {bebidaId.value}
+                            </del> : <del className='price ml-2 text-xs font-medium'>
+                                $ {bebidaId.valueUnit}
+                            </del>}
+                        </div> : <p className='mb-3'>
+                            <span className='font-semibold mr-1'>Unidad $</span>{bebidaId.valueUnit}
+                        </p>}
                     {bebidaId.valueJug ? <p className='mb-3'>
                         <span className='font-semibold mr-1'> Jarra$</span>{bebidaId.valueJug}
                     </p> : null}
@@ -49,7 +56,9 @@ export const getServerSideProps = async (context) => {
         subCategory: data.subCategory,
         valueUnit: data.valueUnit,
         valueJug: data.valueJug || 0,
-        img: data.img
+        img: data.img,
+        discount: data.discount,
+        newValueUnit: data.newValueUnit
     }
 
     const responseMenu = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?subCategory=${bebida.subCategory}&limit=138`);

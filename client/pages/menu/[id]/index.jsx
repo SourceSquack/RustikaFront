@@ -22,9 +22,17 @@ export default function menuIdPage({ menu, dataMenuSug }) {
                     {menuId.subCategory ? <p className='mb-3'>
                         <span className='font-semibold mr-1'>Subcategoria:</span>{menuId.subCategory}
                     </p> : null}
-                    <p className='mb-3'>
-                        <span className='font-semibold mr-1'>$</span>{menuId.value}
-                    </p>
+                    {menuId.discount === true ?
+                        <div className='flex items-center'>
+                            {menuId.newValue ? <p className='price text-lg font-medium'>$ {menuId.newValue}</p> : <p className='price text-lg font-medium'>Unidad: ${menuId.newValueUnit}</p>}
+                            {menuId.value ? <del className='price ml-2 text-xs font-medium'>
+                                $ {menuId.value}
+                            </del> : <del className='price ml-2 text-xs font-medium'>
+                                $ {menuId.valueUnit}
+                            </del>}
+                        </div> : <p className='mb-3'>
+                            <span className='font-semibold mr-1'>$</span>{menuId.value}
+                        </p>}
                 </div>
             </div>
             <Carousel results={dataMenuSug.docs} title={`Más ${menuId.category}`} />
@@ -43,7 +51,9 @@ export const getServerSideProps = async (context) => {
         description: data.description || "",
         category: data.category,
         value: data.value,
-        img: data.img
+        img: data.img,
+        discount: data.discount,
+        newValue: data.newValue
     }
 
     const responseMenuSug = await fetch(`https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?category=${menu.category}&limit=138`);
