@@ -10,10 +10,6 @@ const page = () => {
             <nav className="fixed top-0 left-0 w-full bg-transparent bg-opacity-70 h-16 z-10 transition-opacity duration-500 ease-in-out">
                 <Navbar style={{ background: "rgb(24 24 27)", position: "sticky", top: "0" }} />
             </nav>
-            {/* <div className={`h-1/4 flex align-middle justify-center`} >
-                <video muted autoPlay loop src={"/banerAbout1.mp4"} className="h-full w-full object-cover relative" />
-                <Image src={banner2} alt={"banner decoration"} className="h-[30%] w-1/2 absolute " />
-            </div> */}
             <div className="mt-48 sm:px-6 
                 grid md:grid-cols-1 md:px-16  lg:grid-cols-2  gap-10 lg:px-48">
                 <div className="  text-zinc-900 text-center text-5xl grid gap-y-2 sm:gap-y-8">
