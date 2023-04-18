@@ -3,9 +3,10 @@ import Navbar from "@/components/Navbar";
 import MenuItem from "@/components/MenuItem";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
+import CarouselDiscounts from "@/components/CarouselDiscounts";
 
 
-export default function HomePage() {
+export default function HomePage({ bebidas, platos }) {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -14,6 +15,18 @@ export default function HomePage() {
     setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
     setPrevScrollPos(currentScrollPos);
   };
+
+  let discounts = [];
+  platos.forEach(resultMenu => {
+    if (resultMenu.discount === true) {
+      discounts.push(resultMenu);
+    }
+  })
+  bebidas.forEach(resultDrinks => {
+    if (resultDrinks.discount === true) {
+      discounts.push(resultDrinks);
+    }
+  })
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -51,6 +64,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <CarouselDiscounts results={discounts} title="Descuentos!" />
       <div className="">
         <div className="lg:w-screen lg:my-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -61,4 +75,17 @@ export default function HomePage() {
       <Footer />
     </div>
   );
+}
+
+export const getServerSideProps = async () => {
+  const responseDrinks = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/bebidas?limit=138', { cache: 'no-store' });
+  const dataDrinks = await responseDrinks.json();
+  const responseMenu = await fetch('https://jjgcwluyy7.execute-api.us-west-2.amazonaws.com/platos?limit=138', { cache: 'no-store' });
+  const dataMenu = await responseMenu.json();
+  return {
+    props: {
+      bebidas: dataDrinks.docs,
+      platos: dataMenu.docs
+    }
+  }
 }

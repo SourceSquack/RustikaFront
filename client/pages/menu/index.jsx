@@ -4,15 +4,28 @@ import SearchBox from "@/components/SearchBox";
 import React, { Suspense } from "react";
 import Loading from "../loading";
 import Navbar from "@/components/Navbar";
+import CarouselDiscounts from "@/components/CarouselDiscounts";
 
 export default function MenuPage({ bebidas, platos }) {
+  let discounts = [];
+  platos.forEach(resultMenu => {
+    if (resultMenu.discount === true) {
+      discounts.push(resultMenu);
+    }
+  })
+  bebidas.forEach(resultDrinks => {
+    if (resultDrinks.discount === true) {
+      discounts.push(resultDrinks);
+    }
+  })
   return (
-      <div>
-        <Navbar style={{ backgroundColor: 'black', position: 'sticky', top: '0', opacity:0.87}}/>
-        <SearchBox />
-        <Results resultsMenu={platos} resultsDrinks={bebidas} />
-        <Footer />
-      </div>
+    <div>
+      <Navbar style={{ backgroundColor: 'black', position: 'sticky', top: '0', opacity: 0.87 }} />
+      <SearchBox />
+      <CarouselDiscounts results={discounts} title="Descuentos!" />
+      <Results resultsMenu={platos} resultsDrinks={bebidas} />
+      <Footer />
+    </div>
   );
 }
 
