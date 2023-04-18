@@ -1,37 +1,33 @@
 import { LockClosedIcon } from '@heroicons/react/24/solid';
 import { useRef } from 'react';
-// import { useAuth } from '@hooks/useAuth';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Alert from '@/components/Alert';
 import useAlert from '@/hooks/useAlert';
+import { useAuth } from '@/hooks/useAuth';
 
 export default function LoginPage() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const {alert, setAlert, toggleAlert} = useAlert();
   const router = useRouter();
+  const auth = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    // auth.signIn(email, password).then(() => {
-    //   router.push('/dashboard');
-    // }).catch(err => {
-    //   setModal(true);
-    // })
-    if(email==="admin@mail.com" && password==="123"){
-      router.push('/dashboard/menu')
-    }else{
+    auth.signIn(email, password).then(() => {
+      router.push('/dashboard/platos');
+    }).catch(err => {
       setAlert({
         active: true,
         message: "Usuario o contraseña invalido",
         type: 'error',
         autoClose: false,
       });
-    }
+    })
   };
 
   return (
