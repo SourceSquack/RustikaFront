@@ -1,3 +1,4 @@
+import { ProviderAuth } from '@/hooks/useAuth';
 import '@/styles/globals.css'
 import Head from "next/head";
 
@@ -12,7 +13,9 @@ export default function App({ Component, pageProps }) {
     <meta name="the best restaurant in filandia, quindio" content="grill, restaurant, cafe, bar" />
       <link rel="icon" href="images/favicon.png" />
   </Head>
+  <ProviderAuth>
     <Component {...pageProps} />
+  </ProviderAuth>
     </>
   )
 }
