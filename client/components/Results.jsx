@@ -27,7 +27,7 @@ export default function Results({ resultsMenu, resultsDrinks }) {
 
     return (<>
         <div className='max-w-6xl mx-auto'>
-            <div className='text-center py-6 text-4xl font-bold'>MENU</div>
+            <div className='text-center text-olive py-6 text-4xl font-bold'>MENU</div>
             {menu.map((cat, index) => {
                 return (<Carousel key={index} results={resultsMenu.filter(result => result.category.includes(cat))} title={cat} />)
             })}

@@ -62,7 +62,7 @@ export default function Reservar() {
   return (
     <div className=''>
       <Navbar
-        style={{ backgroundColor: 'black', position: 'sticky', top: '0' }}
+        style={{ backgroundColor: 'black', position: 'sticky', top: '0', opacity:0.87 }}
       />
       <div className='flex flex-row items-center justify-center min-h-screen'>
         <div className='flex flex-col items-center justify-center min-h-screen'>
